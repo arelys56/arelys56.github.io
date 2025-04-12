@@ -1,0 +1,65 @@
+<html>
+    <head>
+    <style>
+        .pic
+        {
+            display: flex;
+        }
+
+        .cycle
+        {
+            object-fit:cover;
+        }
+    </style>
+    </head>
+
+    <body>
+    <div class = "pic">
+        <img class ="cycle" src = "luannalunaaa - CVvcdC2Fiwu - 2.jpg">
+        <img class = "cycle" src = "luannalunaaa - CVvcdC2Fiwu - 1.jpg">
+        <img class = "cycle" src = "luannalunaaa - CVvcdC2Fiwu - 1.jpg">
+        <img class = "cycle" src = "luannalunaaa - CVvcdC2Fiwu - 1.jpg">
+    </div>
+    <div class = "pic">
+        <img class = "cycle" src = "luannalunaaa - BnzLMpcBV75.jpg">
+        <img class = "cycle" src = "luannalunaaa - B_f_mDejfy- - 3.jpg">
+        <img class = "cycle" src = "luannalunaaa - CVvcdC2Fiwu - 1.jpg">
+        <img class = "cycle" src = "luannalunaaa - C-OVhyfPvf7 - 4.jpg">
+    </div>
+    <script>
+        const imagelist =[
+            "luannalunaaa - CVvcdC2Fiwu - 2.jpg",
+            "luannalunaaa - CVvcdC2Fiwu - 1.jpg",
+            "luannalunaaa - CVs8NmfP0oq - 1.jpg",
+            "luannalunaaa - CVs8NmfP0oq - 2.jpg",
+            "luannalunaaa - CwF2LEiuyFZ - 3.jpg",
+            "luannalunaaa - CwF2LEiuyFZ - 2.jpg",
+            "luannalunaaa - CwF2LEiuyFZ - 1.jpg",
+            "luannalunaaa - C-OVhyfPvf7 - 6.jpg",
+            "luannalunaaa - C-OVhyfPvf7 - 5.jpg",
+            "luannalunaaa - C-OVhyfPvf7 - 4.jpg", 
+            "luannalunaaa - C-OVhyfPvf7 - 2.jpg",
+            "luannalunaaa - B_f_mDejfy- - 1.jpg",
+            "luannalunaaa - B_f_mDejfy- - 5.jpg",
+            "luannalunaaa - B_f_mDejfy- - 4.jpg",
+            "luannalunaaa - B_f_mDejfy- - 2.jpg",
+            "luannalunaaa - B_f_mDejfy- - 3.jpg"
+        ];
+
+        let currentIndex = 0;
+        const images = document.querySelectorAll(".cycle");
+        
+        images.forEach(img => {
+            img.dataset.index =0;
+
+            img.addEventListener("click", () => {
+                let currentIndex = parseInt(img.dataset.index, 10);
+                currentIndex = (currentIndex + 1) % imagelist.length;
+            img.src = imagelist[currentIndex];
+            img.dataset.index = currentIndex;
+            });
+        });     
+    </script>
+    
+    </body>
+</html>
